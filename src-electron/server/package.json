@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "NodeJs server for MAbbreviation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "P.Kornienko",
+  "license": "ISC",
+  "bin": "index.js",
+  "pkg": {
+    
+    "scripts": [
+      "index.js"
+    ],
+    "targets": [
+      "node16-win-x64"
+    ],
+    "outputPath": "dist-server"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
+  }
+}
