@@ -1,4 +1,5 @@
 const express = require('express');
+require('sqlite3')
 const sequelize = require('./db.js');
 const cors = require('cors');
 const router = require('./routes/index.js');

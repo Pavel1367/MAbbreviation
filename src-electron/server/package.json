@@ -4,15 +4,21 @@
   "description": "NodeJs server for MAbbreviation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "rebuild": "electron-rebuild -f -w sqlite3"
   },
   "author": "P.Kornienko",
   "license": "ISC",
   "bin": "index.js",
   "pkg": {
-    
     "scripts": [
       "index.js"
+    ],
+    "assets": [
+      "node_modules/sqlite3/lib/**/*",
+      "node_modules/sqlite3/build/**/*",
+      "node_modules/sqlite3/deps/**/*",
+      "node_modules/sqlite3/src/**/*"
     ],
     "targets": [
       "node16-win-x64"
@@ -20,9 +26,13 @@
     "outputPath": "dist-server"
   },
   "dependencies": {
+    "bindings": "^1.5.0",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "sequelize": "^6.37.3",
     "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "electron-rebuild": "^3.2.9"
   }
 }
