@@ -16,7 +16,7 @@
         />
       </transition-group>
 
-    <h2 v-if="!totalFound" class="text-center">
+    <h2 v-if="!totalFound && !isLoading" class="text-center">
       Nothing found <q-icon name="sentiment_dissatisfied" />
     </h2>
   </div>
@@ -28,7 +28,7 @@ import { storeToRefs } from 'pinia';
 import MyListItem from '../MyListItem.vue';
 import { useMainStore } from 'src/mystore/main';
 import { useListAnimations } from './useListAnimations';
-const { abbreviations, totalFound } = storeToRefs(useMainStore());
+const { abbreviations, totalFound, isLoading } = storeToRefs(useMainStore());
 const { onLeave, onEnter, onBeforeEnter } = useListAnimations();
 
 onMounted(() => {

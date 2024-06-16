@@ -1,6 +1,6 @@
 <template>
-  <q-header elevated class="bg-primary text-white" height-hint="98">
-    <q-toolbar class="bg-white shadow-1 rounded-borders text-dark">
+  <q-header elevated  height-hint="98">
+    <q-toolbar class="shadow" :class="[bgColor, textColor]">
       <q-btn flat no-caps>
         <q-icon class="q-mr-xs" name="collections_bookmark" />
         <span class="" style="font-size: 18px"
@@ -21,8 +21,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { useQuasar } from 'quasar';
 
+import { ref, computed } from 'vue';
+const bgColor = computed(() => {
+  return $q.dark.isActive ? 'bg-dark' : 'bg-white'
+})
+const textColor = computed(() => {
+  return $q.dark.isActive ? 'text-white' : 'text-dark'
+})
+const $q = useQuasar();
 const tab = ref('');
 </script>
 
